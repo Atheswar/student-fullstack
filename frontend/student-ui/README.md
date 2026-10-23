@@ -1,16 +1,28 @@
-# React + Vite
+## Project Structure
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- `backend/studentbackend/studentbackend` — Spring Boot REST API
+- `frontend/student-ui` — React and Vite frontend
 
-Currently, two official plugins are available:
+## API Endpoints
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+| Method | Endpoint | Purpose |
+|---|---|---|
+| GET | `/api/students` | Get all students |
+| GET | `/api/students/{id}` | Get a student by ID |
+| GET | `/api/students/search?name=John` | Search by name |
+| POST | `/api/students` | Add a student |
+| PUT | `/api/students/{id}` | Update a student |
+| DELETE | `/api/students/{id}` | Delete a student |
 
-## React Compiler
+## Run Commands
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Backend:** Open the backend folder in Eclipse and run `StudentbackendApplication.java`. Ensure MySQL is running and the database configuration is set locally.
 
-## Expanding the ESLint configuration
+**Frontend:** Open `frontend/student-ui` in VS Code and run:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+**Security:** Keep database passwords and other secrets out of GitHub.
